@@ -34,7 +34,7 @@ public class StateMachineController {
 		producer.send("Message Test");
 		
 		final Request request = new Request();
-		final Response response  = new Response();
+		//final Response response  = new Response();
 		final Message<EventsCustomerInfo> message = MessageBuilder
 				.withPayload(EventsCustomerInfo.VALIDATE)
 				.setHeader("request", request)
