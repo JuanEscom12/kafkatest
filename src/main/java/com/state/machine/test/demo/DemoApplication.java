@@ -14,6 +14,12 @@ public class DemoApplication {
 	@Autowired
 	private KafkaProducer producer;
 
+	@Autowired
+	private Execution execution;
+	
+	@Autowired
+	private Foo foo;
+	
 	public static void main(final String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
@@ -22,19 +28,24 @@ public class DemoApplication {
 	public Sampler defaultSampler() {
 		return Sampler.ALWAYS_SAMPLE;
 	}
+
 	
 	@Bean
     public CommandLineRunner init() {
 
-		System.out.println("\n\n:: SENDING MESSAGE TO KAFKA TOPIC ");
+		System.out.println("********************* RESULT: " + execution.process("Everybody"));
+		//System.out.println("********************* RESULT: " + foo.message());
 		
-        return args -> {
-        	
-        	producer.send("MASTERHUBCONNECTION");
-        	
-        	System.out.println("\n\n:: MESSAGE DELIVERED TO KAFKA TOPIC ");
-        };
-        
+		return null;
+		
+//		System.out.println("\n\n:: SENDING MESSAGE TO KAFKA TOPIC ");
+//		
+//        return args -> {
+//        	
+//        	producer.send("MASTERHUBCONNECTION");
+//        	
+//        	System.out.println("\n\n:: MESSAGE DELIVERED TO KAFKA TOPIC ");
+//        };
         
     }
 		

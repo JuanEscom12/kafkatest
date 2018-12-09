@@ -128,5 +128,12 @@
 		</pluginRepository>
 	</pluginRepositories>
 
+  <distributionManagement>
+    <repository>
+      <id>internal.repo</id>
+      <name>MyCo Internal Repository</name>
+      <url>C:\Users\juan_\.m2</url>
+    </repository>
+  </distributionManagement>
 
 </project>
